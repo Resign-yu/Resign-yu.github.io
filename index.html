@@ -67,7 +67,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 1
+			总文章数 2
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -255,6 +255,142 @@
 
 
   
+    <article id="post-SLsec目录-片段1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/04/SLsec%E7%9B%AE%E5%BD%95-%E7%89%87%E6%AE%B51/">SLsec目录~片段1</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/04/SLsec%E7%9B%AE%E5%BD%95-%E7%89%87%E6%AE%B51/" class="archive-article-date">
+  	<time datetime="2022-03-04T10:21:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-04</time>
+</a>
+        
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>@<a href="SLsec%E7%9B%AE%E5%BD%95~%E7%89%87%E6%AE%B51">TOC</a></p>
+<h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="1-图片的隐写"><a href="#1-图片的隐写" class="headerlink" title="1. 图片的隐写"></a>1. 图片的隐写</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_57061511/article/details/117999226">CTF常用隐写套路 </a>        </p>
+<ul>
+<li>打开题目；下载压缩包；     </li>
+<li>打开后出现图片；</li>
+<li>鼠标右击看属性；无flag；     </li>
+<li>将其用010editor打开，搜索“flag（SLsec）”  ；     </li>
+<li>得到答案。<br>![下载压缩包](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/a31a7685ac7c4710ae576369ff5cadc9.png#pic">https://img-blog.csdnimg.cn/a31a7685ac7c4710ae576369ff5cadc9.png?#pic</a>_ =130x )![下载后的图片](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/4086644a9b644f1d92d67ac25d724e86.png#pic">https://img-blog.csdnimg.cn/4086644a9b644f1d92d67ac25d724e86.png#pic</a>_ =100x )![打开过后](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/7e69b0e89dcb45feb98129b246b2a164.jpg#pic">https://img-blog.csdnimg.cn/7e69b0e89dcb45feb98129b246b2a164.jpg?#pic</a>_ =130x)<hr>
+<h2 id="2-海贼王里的宝藏（仍是隐写）"><a href="#2-海贼王里的宝藏（仍是隐写）" class="headerlink" title="2. 海贼王里的宝藏（仍是隐写）"></a>2. 海贼王里的宝藏<del>（仍是隐写）</del></h2></li>
+<li>继续上述操作；无flag；</li>
+<li>用010editor打开后改变图片的高<font color=Salmon>(宽一般不能改变)；</li>
+<li>注意：<font color=green>数据块开头第2行前四个数据代表宽，接着四个代表高；</li>
+<li>将后四个数据改变为$\color{Plum}{大于或等于}$前四个数据（宽）即可；</li>
+<li>保存，再次打开图片；</li>
+<li>仔细观察图片，发现flag。<br>![打开010editor](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/9aeb01200c6e4b48abb94f4a9d97688d.png#pic">https://img-blog.csdnimg.cn/9aeb01200c6e4b48abb94f4a9d97688d.png?#pic</a>_ =120x)![结果](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/e15cca98317c43ccb8a368c3f20068cd.png#pic">https://img-blog.csdnimg.cn/e15cca98317c43ccb8a368c3f20068cd.png?#pic</a>_ =120x )</li>
+</ul>
+<hr>
+<h2 id="3-找你妹啊"><a href="#3-找你妹啊" class="headerlink" title="3. 找你妹啊"></a>3. 找你妹啊</h2><ul>
+<li>继续上述操作；    </li>
+<li>尝试上述方法均不可通过；</li>
+<li>将其用$\color{Salmon}{StegSolve}$进行分析(Analyse）；</li>
+<li>选择“文件格式(file format)”;</li>
+<li>观察得到flag。<br>![在这里插入图片描述](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/928a9344957649e1b00c467cf64fe58e.bmp#pic">https://img-blog.csdnimg.cn/928a9344957649e1b00c467cf64fe58e.bmp?#pic</a>_ =120x)![在这里插入图片描述](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/97741abfe0e649e39595e8d805e70bcf.jpg#pic">https://img-blog.csdnimg.cn/97741abfe0e649e39595e8d805e70bcf.jpg?#pic</a>_ =120x)</li>
+</ul>
+<hr>
+<h2 id="4-大佬的奇妙冒险"><a href="#4-大佬的奇妙冒险" class="headerlink" title="4. 大佬的奇妙冒险"></a>4. 大佬的奇妙冒险</h2><ul>
+<li>下载文件打开zip后发现文件需要分卷，则得知里面的文件代码块文件头，文件尾等造成破坏；</li>
+<li>打开压缩包看到可观txt文件，知其为base64，解码后知其伪加密；</li>
+<li>将其拖进010中进行解析，发现有两个文件头原因是因为压缩包里有两种文件；</li>
+<li>将刚刚打开的txt文件删除，再次打开；</li>
+<li>将zip文件头进行更改；</li>
+<li>解开后发现png形式图片，仍有加密(看$\color{red}{zip}$伪加密的位置）；</li>
+<li>经更改得到图片，又是图片隐写；</li>
+<li>经分析用$\color{Salmon}{StegSolve}$点击可得二维码，扫码得flag；<br>![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/56a6df35bfcd463ea78cc8ee514b06ba.png#pic">https://img-blog.csdnimg.cn/56a6df35bfcd463ea78cc8ee514b06ba.png?#pic</a>_ =120x<br>)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/449bdebd967c4ba5a017a444d6e5fdb1.png#pic">https://img-blog.csdnimg.cn/449bdebd967c4ba5a017a444d6e5fdb1.png?#pic</a>_ =120x<br>)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/42d5d3935e884ab8b9850c0681ee20c0.png#pic">https://img-blog.csdnimg.cn/42d5d3935e884ab8b9850c0681ee20c0.png?#pic</a>_ =120x<br>)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/7f124c0968fd4c5cb323ff192252570d.png#pic">https://img-blog.csdnimg.cn/7f124c0968fd4c5cb323ff192252570d.png?#pic</a>_ =120x<br>)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/1096c148759c4b1cb2736859898afa33.png#pic">https://img-blog.csdnimg.cn/1096c148759c4b1cb2736859898afa33.png?#pic</a>_ =120x<br>)</li>
+</ul>
+<p>![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/502e114ef43b47d0aac5b98ac1da7502.jpg#pic">https://img-blog.csdnimg.cn/502e114ef43b47d0aac5b98ac1da7502.jpg?#pic</a>_ =120x<br>)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/982efd80b7994feb980dd6c6078e3569.jpg#pic">https://img-blog.csdnimg.cn/982efd80b7994feb980dd6c6078e3569.jpg?#pic</a>_ =120x<br>)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/23b2cd88e917492e8717c329ca946bf8.png#pic">https://img-blog.csdnimg.cn/23b2cd88e917492e8717c329ca946bf8.png?#pic</a>_ =120x<br>)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/7d9a836665ec44d7b25e3c01728ce5a6.jpg#pic">https://img-blog.csdnimg.cn/7d9a836665ec44d7b25e3c01728ce5a6.jpg?#pic</a>_ =120x<br>)<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ECJTUACM-873284962/p/9387711.HTML">破解zip加密文件一般方法</a></p>
+<ul>
+<li>另外还有专门破解未加密的网址哦<br><a target="_blank" rel="noopener" href="http://www.wendanghuifu.com/freetools/zipcenop-unlock.html">在线zip伪加密破解</a></li>
+</ul>
+<hr>
+<h2 id="5-简单的压缩包"><a href="#5-简单的压缩包" class="headerlink" title="5. 简单的压缩包"></a>5. 简单的压缩包</h2><ul>
+<li>压缩包破解，下载文件；</li>
+<li>逐个点开可打开文件，发现提示密码；</li>
+<li>得知暴力破解-掩码；</li>
+<li>破解后打开文件misc.zip;</li>
+<li>得知密码为大于5位数的数字，那么$\color{Pink}{暴力破解}$；</li>
+<li>解密得到如果，输入得到flag；<br>![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/ada6e016178a4828a741225e56c88865.png#pic">https://img-blog.csdnimg.cn/ada6e016178a4828a741225e56c88865.png?#pic</a>_ =120x )![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/40c3aa7df52a4e9ca0cc0aa90dcc9c4d.png#pic">https://img-blog.csdnimg.cn/40c3aa7df52a4e9ca0cc0aa90dcc9c4d.png?#pic</a>_ =120x)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/aaf0c33420d84fa7a29685de1455eb54.png#pic">https://img-blog.csdnimg.cn/aaf0c33420d84fa7a29685de1455eb54.png?#pic</a>_ =120x)![在这里插入图片描述](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/978fcc88d15648acb55e9d14aa270a54.png#pic">https://img-blog.csdnimg.cn/978fcc88d15648acb55e9d14aa270a54.png?#pic</a>_ =120x)![在这里插入图片描述](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/03f79d3e92a94c73ac7f8490aea0b09c.png#pic">https://img-blog.csdnimg.cn/03f79d3e92a94c73ac7f8490aea0b09c.png?#pic</a>_ =120x)</li>
+</ul>
+<hr>
+<h2 id="6-Ezbase"><a href="#6-Ezbase" class="headerlink" title="6. Ezbase"></a>6. Ezbase</h2><ul>
+<li><p>打开文件观察得知为URL编码；</p>
+</li>
+<li><p>解码后，得到莫斯密码；</p>
+</li>
+<li><p>莫斯解码后得base64；</p>
+</li>
+<li><p>根据理解找到相应的base解密；           </p>
+<p><a target="_blank" rel="noopener" href="https://ctf.bugku.com/tools.html">base家族</a>      </p>
+</li>
+</ul>
+<p>![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/80a19ce3cb3f4522bc823c3cabe2ae41.png#pic">https://img-blog.csdnimg.cn/80a19ce3cb3f4522bc823c3cabe2ae41.png?#pic</a>_ =120x)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/09e01ce34de54803929f761c9fbe48ac.png#pic">https://img-blog.csdnimg.cn/09e01ce34de54803929f761c9fbe48ac.png?#pic</a>_ =120x)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/583e6944a2cb427ba4a32e299a75b170.png#pic">https://img-blog.csdnimg.cn/583e6944a2cb427ba4a32e299a75b170.png?#pic</a>_ =120x)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/ba7e39502310462f9a6cc064cc15d94c.png#pic">https://img-blog.csdnimg.cn/ba7e39502310462f9a6cc064cc15d94c.png?#pic</a>_ =120x)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/5226ea8d87d149c6a28ab82a8045ea1f.png#pic">https://img-blog.csdnimg.cn/5226ea8d87d149c6a28ab82a8045ea1f.png?#pic</a>_ =120x)<br>![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/5b9ec8a6967e4c0e96c48bec374e5599.png#pic">https://img-blog.csdnimg.cn/5b9ec8a6967e4c0e96c48bec374e5599.png?#pic</a>_ =130x)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/b0baa60b8eaf43a0b95d679f7ca76049.png#pic">https://img-blog.csdnimg.cn/b0baa60b8eaf43a0b95d679f7ca76049.png?#pic</a>_ =130x)![](<a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/7bf8d5e48cd84f55b5fe72faef40e969.png#pic">https://img-blog.csdnimg.cn/7bf8d5e48cd84f55b5fe72faef40e969.png?#pic</a>_ =130x)</p>
+<hr>
+
+      
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SLsec</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/04/SLsec%E7%9B%AE%E5%BD%95-%E7%89%87%E6%AE%B51/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -349,6 +485,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SLsec</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
@@ -508,7 +648,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"left","width":220,"height":440,"hOffset":130,"vOffset":0},"mobile":{"show":false}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru01.model.json"},"display":{"position":"left","width":170,"height":380,"hOffset":110,"vOffset":0},"mobile":{"show":false}});</script></body>
 ><!--雪花特效-->
 
   <script type="text/javascript" src="/snow.js"></script>
