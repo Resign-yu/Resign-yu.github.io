@@ -8,21 +8,20 @@
   <link rel="dns-prefetch" href="http://Resign-yu.github.io">
   <title>逆向题目 | Resign-yu的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.1 题目一下载下来是一个c代码 刚开始使用一贯的思维以为是逆向，不过只是简单的入门题，学过从c的应该都看得懂。 1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;string.h&gt;int main(int argc, char *argv[]">
-<meta property="og:type" content="article">
+  <meta property="og:type" content="article">
 <meta property="og:title" content="逆向题目">
 <meta property="og:url" content="http://resign-yu.github.io/2022/03/18/%E9%80%86%E5%90%91%E9%A2%98%E7%9B%AE/index.html">
 <meta property="og:site_name" content="Resign-yu的博客">
-<meta property="og:description" content="1.1 题目一下载下来是一个c代码 刚开始使用一贯的思维以为是逆向，不过只是简单的入门题，学过从c的应该都看得懂。 1234567891011121314151617181920212223242526272829303132333435#include &lt;stdio.h&gt;#include &lt;string.h&gt;int main(int argc, char *argv[]">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://resign-yu.github.io/2022/03/18/%E9%80%86%E5%90%91%E9%A2%98%E7%9B%AE/0.jpg">
 <meta property="og:image" content="http://resign-yu.github.io/2022/03/18/%E9%80%86%E5%90%91%E9%A2%98%E7%9B%AE/1.png">
 <meta property="og:image" content="http://resign-yu.github.io/2022/03/18/%E9%80%86%E5%90%91%E9%A2%98%E7%9B%AE/2.png">
 <meta property="article:published_time" content="2022-03-18T14:31:42.000Z">
-<meta property="article:modified_time" content="2022-03-24T11:38:58.375Z">
+<meta property="article:modified_time" content="2022-03-25T01:52:13.658Z">
 <meta property="article:author" content="Resign-yu">
 <meta property="article:tag" content="xCTF">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://resign-yu.github.io/2022/03/18/%E9%80%86%E5%90%91%E9%A2%98%E7%9B%AE/1.png">
+<meta name="twitter:image" content="http://resign-yu.github.io/2022/03/18/%E9%80%86%E5%90%91%E9%A2%98%E7%9B%AE/0.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Resign-yu的博客" type="application/atom+xml">
   
@@ -196,7 +195,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
+        <p><img src="/2022/03/18/%E9%80%86%E5%90%91%E9%A2%98%E7%9B%AE/0.jpg" alt="MARK"></p>
+<span id="more"></span>
+
+<hr>
 <h1 id="1-1-题目一"><a href="#1-1-题目一" class="headerlink" title="1.1 题目一"></a>1.1 题目一</h1><p>下载下来是一个c代码</p>
 <p>刚开始使用一贯的思维以为是逆向，不过只是简单的入门题，学过从c的应该都看得懂。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (argc != <span class="number">4</span>) &#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;what?\n&quot;</span>);</span><br><span class="line">    	<span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> first = atoi(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">if</span> (first != <span class="number">0xcafe</span>) &#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;you are wrong, sorry.\n&quot;</span>);</span><br><span class="line">    	<span class="built_in">exit</span>(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> second = atoi(argv[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">if</span> (second % <span class="number">5</span> == <span class="number">3</span> || second % <span class="number">17</span> != <span class="number">8</span>) &#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;ha, you won&#x27;t get it!\n&quot;</span>);</span><br><span class="line">    	<span class="built_in">exit</span>(<span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">&quot;h4cky0u&quot;</span>, argv[<span class="number">3</span>])) &#123;</span><br><span class="line">    	<span class="built_in">printf</span>(<span class="string">&quot;so close, dude!\n&quot;</span>);</span><br><span class="line">    	<span class="built_in">exit</span>(<span class="number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Brr wrrr grr\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">int</span> hash = first * <span class="number">31337</span> + (second % <span class="number">17</span>) * <span class="number">11</span> + <span class="built_in">strlen</span>(argv[<span class="number">3</span>]) - <span class="number">1615810207</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Get your key: &quot;</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%x\n&quot;</span>, hash);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -481,11 +483,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">buu</a>
+                <a href="javascript:void(0)" class="js-tag color5">xCTF</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">xCTF</a>
+                <a href="javascript:void(0)" class="js-tag color4">buu</a>
               </li>
             
             <div class="clearfix"></div>
