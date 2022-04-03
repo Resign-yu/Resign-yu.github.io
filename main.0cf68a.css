@@ -902,7 +902,7 @@ html {
 
 .left-col {
   /* background:#fff; */
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://www.bing.com/th/id/OGC.e5a033e5bfe75674a4fb19084cb95a28?pid=1.7&rurl=http%3a%2f%2fimg95.699pic.com%2fphoto%2f40103%2f2292.gif_wh300.gif&ehk=NBx%2fvTx1uphLjuK05twpobgfDmU5sPbbvHCn7gXZO%2bI%3d') no-repeat 0% 20%/ cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('https://img95.699pic.com/photo/40140/9051.gif_wh860.gif') no-repeat 0% 20%/ cover;
   width: 300px;
   position: fixed;
   opacity: 1;
