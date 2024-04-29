@@ -517,58 +517,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
-
-
-
-<h1 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h1><p>思考题：如果一个算法的时间执行次数为3n^3^+5n，那么该算法的时间复杂度为==O(n^3^)==</p>
-<p>原因：因为时间复杂度计算<code>忽略高项的洗漱和低阶项</code></p>
-<ul>
-<li>时间复杂度计算例题</li>
-</ul>
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/1.png" alt="时间复杂度计算1"></p>
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/2.png" alt="时间复杂度计算2"></p>
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/3.png" alt="时间复杂度计算3"></p>
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/4.png" alt="时间复杂度计算4"></p>
-<h1 id="malloc，calloc获得数组"><a href="#malloc，calloc获得数组" class="headerlink" title="malloc，calloc获得数组"></a>malloc，calloc获得数组</h1><ul>
-<li><strong>正常使用函数构建空间</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">GetArray</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// int res[] = &#123;1,2,3&#125;</span></span><br><span class="line">    <span class="keyword">int</span> res[<span class="number">100</span>] = &#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr = <span class="built_in">GetArray</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,arr[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/2.1-1.png" alt="result注释"></p>
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/2.1-2.png" alt="result"></p>
-<p>结果显示，其是混乱的（<code>若在主函数中res[100] = &#123;&#125;将会被全部初始化为0</code>）</p>
-<p>==原因==：函数GetArray()函数是在栈中申请的内存，函数结束后就释放了</p>
-<ul>
-<li><strong>使用malloc构建空间，并初始化</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">GetArray</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *res = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">100</span>*<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">        res[i] = i;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr = <span class="built_in">GetArray</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,arr[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/2.2.png" alt="result"></p>
-<p>结果显示：其是整齐的排列</p>
-<p>==原因==：malloc申请是在内存堆中申请的，如果不进行释放，那么在内存的该段就会一直被占用，只要有指针指向它，就能使用</p>
-<ul>
-<li><strong>malloc在不适用初始化时，内存中的值也是混乱的</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">GetArray</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *res = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">100</span>*<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr = <span class="built_in">GetArray</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,arr[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/2.3.png" alt="result"></p>
-<p>结果显示：其分配也是混乱的</p>
-<ul>
-<li><strong>malloc释放内存分析</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr = <span class="built_in">GetArray</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,arr[i]);</span><br><span class="line">    <span class="built_in">free</span>(arr);	<span class="comment">// 释放空间</span></span><br><span class="line">    arr = <span class="literal">NULL</span>;	<span class="comment">// 将arr指针释放</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/2.4.png" alt="analysis"></p>
-<ul>
-<li><strong>使用calloc来申请内存</strong></li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> *<span class="title">GetArray</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *res = (<span class="keyword">int</span>*)<span class="built_in">calloc</span>(<span class="number">100</span>,<span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *arr = <span class="built_in">GetArray</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,arr[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/04/01/C%E7%9D%A3%E5%AD%A6%E8%90%A5%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/2.5.png" alt="result"></p>
-<p>结果显示：整齐的全是已经初始化为0的内存，==NULL在内存中也是0。==</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cN4y177nU/?spm_id_from=333.788&vd_source=feda7b4b64bdcc4da7a9d3fc1f949e0b">用realloc对数组扩容缩容解析 bilibili</a></p>
-
+        <p>知识小记</p>
+        
       
       
       
