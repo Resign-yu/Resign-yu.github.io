@@ -6,10 +6,10 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://Resign-yu.github.io">
-  <title>javaweb学习篇1 | Ryu&#39;s dream city</title>
+  <title>javaweb&amp;sql | Ryu&#39;s dream city</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="javaweb学习篇1">
+<meta property="og:title" content="javaweb&amp;sql">
 <meta property="og:url" content="http://resign-yu.github.io/2023/05/24/javaweb%E5%AD%A6%E4%B9%A0%E7%AF%87/index.html">
 <meta property="og:site_name" content="Ryu&#39;s dream city">
 <meta property="og:locale" content="zh_CN">
@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://resign-yu.github.io/2023/05/24/javaweb%E5%AD%A6%E4%B9%A0%E7%AF%87/web1.png">
 <meta property="og:image" content="http://resign-yu.github.io/2023/05/24/javaweb%E5%AD%A6%E4%B9%A0%E7%AF%87/web2.png">
 <meta property="article:published_time" content="2023-05-24T10:29:02.000Z">
-<meta property="article:modified_time" content="2023-12-22T06:38:00.282Z">
+<meta property="article:modified_time" content="2024-05-10T13:57:08.522Z">
 <meta property="article:author" content="Resign-yu">
 <meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary">
@@ -113,7 +113,7 @@
 			</ul>
 		</nav>
 		<nav>
-			总文章数 14
+			总文章数 15
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -238,7 +238,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      javaweb学习篇1
+      javaweb&amp;sql
     </h1>
   
 
@@ -451,9 +451,6 @@
 
 <ul>
 <li><p>where 和 having 的区别？</p>
-<pre><code>  1. where 在分组之前进行限定，如果不满足条件，则不参与分组。having在分组之后进行限定，如果不满足结果，则不会被查询出来
-  2. where 后不可以跟聚合函数，having可以进行聚合函数的判断。
-</code></pre>
 </li>
 <li><p>–  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> sex , <span class="built_in">AVG</span>(math),<span class="built_in">COUNT</span>(id) <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> math <span class="operator">&gt;</span> <span class="number">70</span> <span class="keyword">GROUP</span> <span class="keyword">BY</span> sex;</span><br></pre></td></tr></table></figure></li>
@@ -814,8 +811,8 @@
     </a>
   
   
-    <a href="/2023/04/06/%E7%AE%97%E6%B3%95-%E6%A0%91/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">BinTree</div>
+    <a href="/2023/05/10/DBexercise/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库代码练习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -958,6 +955,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">exercise</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">databases</a>
               </li>
              
               <li class="article-tag-list-item">
